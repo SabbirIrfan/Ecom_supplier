@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const orderlistSchema = new mongoose.Schema({
     product_id : {type: String, required: true},
-    supplier_id : {type: String, required: true, unique: false},
+    supplier_id : {type: Number, required: true, unique: false},
     transaction_id : {type: String, required: true},
     address : {type: String, required: true},
     price : {type: Number, default : 0},

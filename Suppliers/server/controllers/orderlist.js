@@ -4,7 +4,7 @@ import express from "express";
 import fs from "fs";
 import jwt from "jsonwebtoken";
 ///DATABASE
-import User from "../models/orderlistSchema.js";
+import orderlist from "../models/orderlistSchema.js";
 const router = express.Router();
 
 ///DATABASEE
@@ -22,14 +22,14 @@ fs.readFile("./../server/database/user.json", "utf8", (err, data) => {
 
 export const showorders = async (req, res) => {
   // console.log(req.body);
-//   const { accountNumber, password } = req.body;
-//   if (!accountNumber || !password) {
-//     res.status(200).json({ message: "All field of data must be required" });
-//   }
+  const { supplier_id } = req.body;
+  if (!supplier_id) {
+    res.status(200).json({ message: "All field of data must be required" });
+  }
 
   try {
-    const filter = {};
-    const existingUser = await User.find(filter);
+    const filter = {supplier_id};
+    const existingUser = await orderlist.find(filter);
 
     // if (!existingUser)
     //   return res

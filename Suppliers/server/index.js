@@ -12,6 +12,8 @@ import addproducts from './routes/addproducts.js';
 import orderlist from './routes/orderlist.js';
 
 import addOrder from './routes/addOrder.js';
+import updateOrder from './routes/updateOrder.js';
+
 
 
 dotenv.config();
@@ -39,6 +41,7 @@ app.use('/addProducts',addproducts);
 app.use('/products',products);
 app.use('/orderlist',orderlist);
 app.use('/addOrder',addOrder);
+app.use('/updateOrder',updateOrder);
 
 
 
