@@ -9,6 +9,8 @@ import registerRoutes from './routes/register.js';
 import transactionRoutes from './routes/transaction.js';
 import products from './routes/products.js';
 import addproducts from './routes/addproducts.js';
+import deleteproduct from './routes/deleteproduct.js';
+
 import orderlist from './routes/orderlist.js';
 
 import addOrder from './routes/addOrder.js';
@@ -37,11 +39,12 @@ app.use('/transaction', transactionRoutes);
 app.use('/auth', authRoutes);
 app.use('/register', registerRoutes);
 app.use('/addProducts',addproducts);
-
+app.use('/deleteProduct',deleteproduct);
 app.use('/products',products);
 app.use('/orderlist',orderlist);
 app.use('/addOrder',addOrder);
 app.use('/updateOrder',updateOrder);
+
 
 
 
